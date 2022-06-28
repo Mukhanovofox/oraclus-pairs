@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+*{
+  font-family: 'Mulish', sans-serif;
+}
+@import "../assets/classes";
+body{
+  margin: 0;
+  background: $gradient-1;
+}
+*{
+  color: #fff;
+}
+.common-layout{
+  height: 100vh;
+  overflow: hidden;
+  width: 100%;
+  .el-container{
+    height: 100%;
+    &.fatherContainer{
+      height: calc(100% - 60px);
+    }
+  }
+}
+header.el-header{
+  background: $color-main-3;
+  border-bottom: 1px solid $border-color;
+  padding: 10px 15px;
+  .el-row{
+    height: 100%;
+  }
+  .logo{
+    font-size: 24px;
+    margin: 0;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+}
+.el-aside{
+  background: $color-main-3;
+  padding: 10px 0;
+  position: relative;
+  .label{
+    display: block;
+    margin: 20px 0 0 15px;
+    color: $color-main-1-darkened;
+    font-size: 14px;
+  }
+  ul.coinsList{
+    display: block;
+    max-height: 60%;
+    overflow-y: auto;
+    padding: 0;
+    margin: 10px 0 0;
+    li{
+      display: block;
+      margin: 0;
+      color: #c1c1c1;
+      font-size: 16px;
+      transition: .2s linear;
+      padding: 20px 15px;
+      &+li{
+        border-top: 1px solid $color-card-3;
+      }
+      &:hover{
+        color: #eee;
+        cursor: pointer;
+        padding-left: 25px;
+      }
+      &.active{
+        color: $color-main-1;
+        font-weight: 800;
+        background: $color-card-3;
+        border-left: 10px solid $color-main-1-darkened;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-main-3;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $color-main-1-darkened;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-main-1;
+    }
+  }
+  p.copyr{
+    display: table;
+    margin: 0;
+    position: absolute;
+    bottom: 25px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #999;
+    left: 15px;
+  }
+}
+.el-card{
+  background: $color-main-3;
+  margin-bottom: 20px;
+  border-radius: $border-radius;
+  border: 1px solid transparent;
+  overflow: hidden;
+  .el-card__header{
+    display: block;
+    width: 100%;
+    background: transparent;
+    padding: 15px;
+    border-bottom: 1px solid $color-card-3;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+  }
+  .el-card__body{
+    padding: 0;
+    .content{
+      display: block;
+      padding: 15px;
+    }
+  }
+}
+.el-main{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $color-main-3;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $color-main-1-darkened;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: $color-main-1;
+  }
+}
+
+.chardCard{
+  .content{
+    padding-left: 5px!important;
+  }
+  h3{
+    display: table;
+    margin: 0 0 15px 10px;
+  }
+}
+
+h1{
+  display: table;
+  margin: 30px auto 40px;
+  font-size: 24px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.el-table{
+  background: transparent;
+  .el-table__body-wrapper{
+    max-height: 460px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $color-main-3;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $color-main-1-darkened;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: $color-main-1;
+    }
+  }
+  .el-table__inner-wrapper{
+    &:before{
+      background: transparent;
+    }
+  }
+  .el-table__cell{
+    border-color: $color-card!important;
+    padding: 14px 15px;
+    font-size: 14px;
+  }
+  thead{
+    background: $color-card-3;
+    tr{
+      background: $color-card;
+      .el-table__cell{
+        background: $color-card-3!important;
+        padding-left: 5px;
+        color: #999;
+        *{
+          color: #999;
+        }
+      }
+    }
+  }
+  tbody{
+    tr{
+      background: transparent;
+      .el-table__cell{
+        background: transparent!important;
+        padding-left: 5px;
+        transition: .2s linear;
+        border-top: 1px solid transparent!important;
+      }
+      &+tr{
+        .el-table__cell{
+          border-top: 1px solid $color-card-3!important;
+        }
+      }
+      &:hover{
+        .el-table__cell{
+          background: $color-card-3!important;
+          border-top: 2px solid $color-main-1-darkened!important;
+          border-bottom: 2px solid $color-main-1-darkened!important;
+        }
+      }
+    }
+  }
+}
+
+.el-loading-mask {
+  background: rgba(32,13,54,.81);
+}
+
+.el-loading-spinner .path {
+  stroke: $color-main-1;
+  stroke-width: 4;
+}
+.el-range-editor.el-input__wrapper {
+  white-space: normal;
+  background: transparent;
+  display: table;
+  max-width: 100%;
+  padding: 0;
+  text-align: center;
+  width: auto;
+  color: #fff;
+  margin: 15px 15px 25px;
+  box-shadow: 0 0 0 1px $color-main-1-darkened;
+}
+
+.el-range-editor.el-input__wrapper i {
+  display: none;
+}
+
+.el-range-editor.el-input__wrapper input {
+  color: $color-main-2;
+  font-weight: 700;
+}
+
+.el-range-editor.el-input__wrapper span {
+  color: $color-main-1-darkened;
+}
+
+.el-date-range-picker {
+  background: $gradient-1;
+}
+
+.el-popper.is-light {
+  background: transparent;
+  border: 1px solid $border-color;
+}
+
+.el-date-range-picker__content.is-left {border-right: 1px solid $border-color;}
+
+.el-date-table th {
+  border-bottom: 1px solid $border-color;
+  color: $color-main-1;
+}
+
+.el-date-range-picker__header div {
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.el-date-table td.end-date .el-date-table-cell__text, .el-date-table td.start-date .el-date-table-cell__text {
+  background: $color-main-2;
+}
+
+.el-date-table td.in-range .el-date-table-cell {
+  background: $color-main-1-darkened;
+  &:hover{
+    background: $color-main-1-darkened;
+  }
+}
+
+.el-date-table td.today .el-date-table-cell__text {
+  color: $datepicker-1;
+}
+
+.el-message--success {
+  i{
+    color: #67c23a!important;
+    *{
+
+      color: #67c23a!important;
+    }
+  }
+  p{
+    color: #67c23a!important;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 1600px) and (min-width: 678px) {
+  .el-aside ul.coinsList li {
+    font-size: 14px;
+  }
+
+  .chardCard h3 {
+    font-size: 16px;
+  }
+
+  .el-card .el-card__header {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 678px) {
+  .el-aside {
+    position: relative;
+    display: block;
+    width: 100%;
+    float: unset;
+  }
+
+  .common-layout .el-container.fatherContainer {
+    height: auto;
+    display: block;
+  }
+
+  .common-layout {
+    overflow: auto;
+    height: auto;
+  }
+
+  .el-main {
+    flex: unset;
+  }
+
+  .el-aside .label {
+    margin: 15px 15px 0;
+    font-size: 12px;
+  }
+
+  .el-range-editor.el-input__wrapper {
+    margin: 10px 15px 15px;
+  }
+
+  .el-aside ul.coinsList li {
+    font-size: 12px;
+    padding: 15px;
+  }
+
+  .el-aside ul.coinsList {
+    max-height: 159px;
+  }
+
+  .el-aside p.copyr {
+    display: none;
+  }
+
+  .el-main {
+    padding: 15px;
+  }
+  .chardCard h3 {
+    font-size: 16px;
+  }
+
+  .el-card .el-card__header {
+    font-size: 16px;
+  }
+
+  .el-table .cell {
+    font-size: 12px;
+  }
+  .el-message {
+    width: 90%!important;
+    max-width: 90%!important;
+    margin: 0 auto;
+    min-width: 90%!important;
+    i{
+      font-size: 12px;
+    }
+    p{
+      font-size: 12px;
+    }
+  }
+}
+.el-empty {
+  height: 100%;
+}
