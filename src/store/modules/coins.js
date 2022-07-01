@@ -18,7 +18,7 @@ const state = {
 
 const actions = {
     [GET_PAIRS_INFO]: async (store) => {
-        const {data} = await axios({url: '', method: 'GET'});
+        const {data} = await axios({url: 'uniswap/pairs/main', method: 'GET'});
         console.log(data);
         let data2 = [{
             "id": 1021338,
