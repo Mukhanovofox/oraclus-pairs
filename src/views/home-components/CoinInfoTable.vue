@@ -1,22 +1,64 @@
 <template>
-  <el-table :data="pairs_info" style="width: 100%">
-    <el-table-column :sortable="true" prop="date" label="Date" min-width="180" />
-    <el-table-column :sortable="true" prop="market_cap" label="Market Cap" min-width="250" />
-    <el-table-column :sortable="true" prop="price_USD" label="Price (USD)" min-width="250" />
-    <el-table-column :sortable="true" prop="total_supply" label="Total Supply" min-width="180" />
-    <el-table-column :sortable="true" prop="circulating_supply" label="Circulating Supply" min-width="200" />
-  </el-table>
+    <el-table :data="pairs_info" style="width: 100%">
+        <el-table-column :sortable="true">
+            <template #header>
+                Date
+            </template>
+            <template #default="scope">
+                {{ moment(scope.row.created_time) }}
+            </template>
+        </el-table-column>
+        <el-table-column :sortable="true">
+            <template #header>
+                Reserve0
+            </template>
+            <template #default="scope">
+                {{ Number(scope.row.reserve0).toFixed(2) }}
+            </template>
+        </el-table-column>
+        <el-table-column :sortable="true">
+            <template #header>
+                Reserve1
+            </template>
+            <template #default="scope">
+                {{ Number(scope.row.reserve1).toFixed(2) }}
+            </template>
+        </el-table-column>
+        <el-table-column :sortable="true">
+            <template #header>
+                ReserveETH
+            </template>
+            <template #default="scope">
+                {{ Number(scope.row.reserveETH).toFixed(2) }}
+            </template>
+        </el-table-column>
+        <el-table-column :sortable="true">
+            <template #header>
+                ReserveUSD
+            </template>
+            <template #default="scope">
+                {{ Number(scope.row.reserveUSD).toFixed(2) }}
+            </template>
+        </el-table-column>
+    </el-table>
 </template>
 
 <script>
-export default {
-  data: () => ({
-    loading: false,
-  }),
-  computed: {
-    pairs_info() {
-      return this.$store.getters.get_pairs_info;
-    },
-  }
-}
+    import moment from 'moment';
+
+    export default {
+        data: () => ({
+            loading: false,
+        }),
+        methods: {
+            moment: function (data) {
+                return moment(data).format('YYYY-MM-DD');
+            }
+        },
+        computed: {
+            pairs_info() {
+                return this.$store.getters.get_pairs_info;
+            },
+        }
+    }
 </script>

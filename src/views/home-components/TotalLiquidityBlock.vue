@@ -1,14 +1,14 @@
 <template>
     <el-row :gutter="20">
         <el-col :span="24">
-            <h2>Total Supply</h2>
+            <h2>Total Liquidity</h2>
         </el-col>
         <el-col :xs="24" :sm="12" :md="12" :lg="12">
             <el-card class="chardCard">
                 <div class="content">
                     <h3>Token0</h3>
-                    <TotalSupplyToken0 v-if="chartData.labels && chartData.token0 && show" :labels="chartData.labels"
-                                          :values="chartData.token0"></TotalSupplyToken0>
+                    <TotalLiquidityToken0 v-if="chartData.labels && chartData.token0 && show" :labels="chartData.labels"
+                                          :values="chartData.token0"></TotalLiquidityToken0>
                 </div>
             </el-card>
         </el-col>
@@ -16,8 +16,8 @@
             <el-card class="chardCard">
                 <div class="content">
                     <h3>Token1</h3>
-                    <TotalSupplyToken1 v-if="chartData.labels && chartData.token1 && show" :labels="chartData.labels"
-                                          :values="chartData.token1"></TotalSupplyToken1>
+                    <TotalLiquidityToken1 v-if="chartData.labels && chartData.token1 && show" :labels="chartData.labels"
+                                          :values="chartData.token1"></TotalLiquidityToken1>
                 </div>
             </el-card>
         </el-col>
@@ -26,13 +26,13 @@
 
 <script>
     import moment from 'moment';
-    import TotalSupplyToken0 from "@/components/TotalSupplyToken0";
-    import TotalSupplyToken1 from "@/components/TotalSupplyToken1";
+    import TotalLiquidityToken0 from "@/components/TotalLiquidityToken0";
+    import TotalLiquidityToken1 from "@/components/TotalLiquidityToken1";
 
     export default {
         components: {
-            TotalSupplyToken0,
-            TotalSupplyToken1
+            TotalLiquidityToken0,
+            TotalLiquidityToken1
         },
         data: () => ({
             show: true,
@@ -43,15 +43,15 @@
             },
         }),
         methods: {
-            async createChartData() {
+         async createChartData() {
                 this.show = false;
                 let array1 = [];
                 let token0 = [];
                 let token1 = [];
                 await this.pairs_info.forEach(function (elem) {
                     array1.push(moment(elem['created_time']).format('YYYY-MM-DD'));
-                    token0.push(elem['token0']['totalSupply0']);
-                    token1.push(elem['token1']['totalSupply1']);
+                    token0.push(elem['token0']['totalLiquidity0']);
+                    token1.push(elem['token1']['totalLiquidity1']);
                 });
                 this.chartData.labels = array1;
                 this.chartData.token0 = token0;

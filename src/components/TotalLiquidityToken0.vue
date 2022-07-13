@@ -1,5 +1,5 @@
 <template>
-    <canvas id="PriceChart"></canvas>
+    <canvas id="TotalLiquidityToken0"></canvas>
 </template>
 <script>
     import Chart from 'chart.js/auto';
@@ -8,14 +8,13 @@
         name: 'LineChart',
         props: {
             labels: [Object, Array],
-            token0: [Object, Array],
-            token1: [Object, Array],
+            values: [Object, Array],
         },
         data: () => ({
             loading: false,
         }),
         mounted() {
-            const ctx = document.getElementById('PriceChart').getContext('2d');
+            const ctx = document.getElementById('TotalLiquidityToken0').getContext('2d');
             let gradient = ctx.createLinearGradient(0, 0, 0, 300);
             gradient.addColorStop(0, '#b654a4');
             gradient.addColorStop(0.3, '#5c4696');
@@ -26,27 +25,14 @@
                     labels: this.labels,
                     datasets: [
                         {
-                            data: this.token0,
-                            label: 'token0',
-                            borderColor: 'blue',
+                            data: this.values,
+                            borderColor: '#ff84af',
                             fill: true,
-                            backgroundColor: 'transparent',
+                            backgroundColor: gradient,
                             tension: 0.1,
                             borderWidth: 2,
                             pointBorderWidth: 0,
-                            pointBackgroundColor: 'blue',
-                            pointRadius: 0
-                        },
-                        {
-                            data: this.token1,
-                            label: 'token1',
-                            borderColor: 'red',
-                            fill: true,
-                            backgroundColor: 'transparent',
-                            tension: 0.1,
-                            borderWidth: 2,
-                            pointBorderWidth: 0,
-                            pointBackgroundColor: 'red',
+                            pointBackgroundColor: '#ff84af',
                             pointRadius: 0
                         },
                     ]

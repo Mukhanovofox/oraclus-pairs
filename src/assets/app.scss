@@ -97,6 +97,9 @@ header.el-header{
     color: #999;
     left: 15px;
   }
+  .el-loading-spinner .path{
+    display: none!important;
+  }
 }
 .el-card{
   background: $color-main-3;
@@ -311,6 +314,59 @@ h1{
     font-weight: 800;
   }
 }
+.el-input>div {display: block;background: transparent;border-radius: 4px;box-shadow: 0 0 0 1px #666;}
+
+.el-input input {
+  background: transparent;
+  padding: 0 6px;
+}
+
+.searchInput {
+  display: block;
+  margin: 18px 0 0;
+  padding: 0 15px;
+}
+p.clear{
+  display: block;
+  padding: 10px 15px 0;
+  color: $color-main-2;
+  font-size: 14px;
+  text-align: center;
+}
+.el-empty {
+  height: 100%;
+}
+.periodList{
+  display: flex;
+  margin: 10px 15px;
+  padding: 4px;
+  background: $color-card-3;
+  border-radius: $border-radius-2;
+  li{
+    display: inline-flex;
+    flex-grow: 1;
+    text-align: center;
+    background: transparent;
+    border-radius: $border-radius-2;
+    padding: 5px 0;
+    margin: 0 1px;
+    border: 1px solid transparent;
+    transition: .2s linear;
+    p{
+      display: table;
+      text-align: center;
+      font-size: 12px;
+      margin: 0 auto;
+    }
+    &:hover{
+      cursor: pointer;
+      border-color: $color-main-2;
+    }
+    &.active{
+      background: $color-main-2;
+    }
+  }
+}
 
 @media (max-width: 1600px) and (min-width: 678px) {
   .el-aside ul.coinsList li {
@@ -396,7 +452,7 @@ h1{
       font-size: 12px;
     }
   }
-}
-.el-empty {
-  height: 100%;
+  .hidden-xs-only{
+    display: none!important;
+  }
 }
