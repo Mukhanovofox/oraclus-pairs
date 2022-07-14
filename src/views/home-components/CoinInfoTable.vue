@@ -1,6 +1,6 @@
 <template>
     <el-table :data="pairs_info" style="width: 100%">
-        <el-table-column :sortable="true">
+        <el-table-column :sortable="true" min-width="150">
             <template #header>
                 Date
             </template>
@@ -8,7 +8,7 @@
                 {{ moment(scope.row.created_time) }}
             </template>
         </el-table-column>
-        <el-table-column :sortable="true">
+        <el-table-column :sortable="true" min-width="150">
             <template #header>
                 Reserve0
             </template>
@@ -16,7 +16,7 @@
                 {{ Number(scope.row.reserve0).toFixed(2) }}
             </template>
         </el-table-column>
-        <el-table-column :sortable="true">
+        <el-table-column :sortable="true" min-width="150">
             <template #header>
                 Reserve1
             </template>
@@ -24,7 +24,7 @@
                 {{ Number(scope.row.reserve1).toFixed(2) }}
             </template>
         </el-table-column>
-        <el-table-column :sortable="true">
+        <el-table-column :sortable="true" min-width="150">
             <template #header>
                 ReserveETH
             </template>
@@ -32,7 +32,7 @@
                 {{ Number(scope.row.reserveETH).toFixed(2) }}
             </template>
         </el-table-column>
-        <el-table-column :sortable="true">
+        <el-table-column :sortable="true" min-width="150">
             <template #header>
                 ReserveUSD
             </template>

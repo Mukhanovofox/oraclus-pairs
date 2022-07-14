@@ -17,7 +17,7 @@
                         <el-col :xs="24" :sm="24" :md="12" :lg="12">
                             <TotalSupplyBlock v-loading="pairs_loading"/>
                         </el-col>
-                        <el-col :span="10">
+                        <el-col :xs="24" :sm="24" :md="10" :lg="10">
                             <el-card>
                                 <template #header>
                                     <div class="card-header">
@@ -27,7 +27,7 @@
                                 <PriceBlock v-loading="pairs_loading"/>
                             </el-card>
                         </el-col>
-                        <el-col :span="14">
+                        <el-col :xs="24" :sm="24" :md="14" :lg="14">
                             <el-card>
                                 <template #header>
                                     <div class="card-header">

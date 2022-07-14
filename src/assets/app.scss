@@ -380,6 +380,9 @@ p.clear{
   .el-card .el-card__header {
     font-size: 16px;
   }
+  .el-table .el-table__cell {
+    font-size: 12px;
+  }
 }
 
 @media (max-width: 678px) {
